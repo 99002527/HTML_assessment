@@ -1,0 +1,1 @@
+var array = ["Tommy", "Sammy", "Johnny"]

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validateForm() {
+            var emailregex = /^(?=.*[a-z])(?=.*[.com])/;
+            var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#\*\?])/;
+            var phoneregex = /^(?=.*[0-9])/;
+            // var un = document.getElementById("username").value;
+            //var x = un.length;
+            if (document.getElementById("username").value == "") {
+                alert("enter your name");
+                document.myform.uname.focus();
+
+            } else if (document.getElementById("username").value.length < 5) {
+                alert("enter your name properly more than 5 characters");
+                document.myform.uname.focus();
+
+            } else if (document.getElementById("username").value.length > 15) {
+                alert("enter your name properly within 15 characters");
+                document.myform.uname.focus();
+
+            } else if (document.getElementById("password").value == "") {
+                alert("enter your password");
+                document.myform.pass.focus();
+
+            } else if (emailregex.test(document.getElementById("email").value) == false) {
+                alert("enter your email in CORRECT format");
+                document.myform.ema.focus();
+
+            } else if (regex.test(document.getElementById("password").value) == false) {
+                alert("enter your password with Capital and small and special characters");
+                document.myform.pass.focus();
+
+            } else if (phoneregex.test(document.getElementById("phone").value) == false) {
+                alert("enter your phone with numbers only");
+                document.myform.pho.focus();
+
+            } else {
+
+                alert("you are registered");
+                document.myform.submit();
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <form action="formfinal.html" name="myform">
+
+        Name<input type="text" name="uname" id="username"><br> Password
+
+        <input type="password" name="pass" id="password"><br> Email
+
+        <input type="text" name="ema" id="email"><br> Phone
+        <input type="text" name="pho" id="phone"><br> City
+        <input type="text" name="cit" id="city"><br>
+        <input type="button" value="click here" onclick="validateForm()">
+
+    </form>
+
+
+</body>
+
+</html>

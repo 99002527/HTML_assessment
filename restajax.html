@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $('#show').click(function() {
+                username = $('#username').val();
+                city = $('#city').val();
+                email = $('#email').val();
+                phone = $('#phone').val();
+                $('#myid').html('Welcome' + ' ' + username + ' ' + 'from ' + city);
+
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <form>
+
+        Enter Name
+        <input type="text" id="username"><br><br> Enter City
+        <input type="text" id="city"><br>Enter EMail
+        <input type="text" id="email"><br>Enter Phone
+        <input type="text" id="phone"><br><br>
+        <input type="button" id="show">
+        <div id="myid" style="background-color: royalblue;"></div>
+        <p id="Myname"></p>
+    </form>
+</body>
+
+</html>
+
+
+.get("books.json", function(data, status) { data.forEach(book => { var str = ''; for (const prop in book) { str += prop + ' ' + book[prop] + ' ' + '<br>'; } $('#myid').append(str).append('
+<br>'); }); });
